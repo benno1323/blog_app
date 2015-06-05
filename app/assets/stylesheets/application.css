@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+.jumbotron {
+	background-image: url('city-street.jpg');
+	background-attachment: fixed;
+	color: white;
+	background-size: cover;
+	min-height: 400px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+.auto-pad {
+	padding: auto;
+}
+
+.highlight {
+	background-color: rgba(0,102,51,0.7);
+}
+
+.thin {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+
+.light {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+.normal {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.medium {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
