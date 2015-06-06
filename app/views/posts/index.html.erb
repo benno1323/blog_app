@@ -1,31 +1,88 @@
 <%= render 'layouts/jumbotron' %>
 
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <p id="notice"><%= notice %></p>
 
-<br>
+  <div id="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Latest News
+          <p class="lead">Catchy Subtitle Here</p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg">
+          <div class="row">
+            <div class="col-sm-12">
+              Ad Space
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /cont -->
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+  <br>
+  <br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-body">
+          <% @posts.each do |post| %>
+          <div class="row">
+            <div class="col-md-10 col-sm-9">
+              <h3><%= post.title %></h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <p><%= post.content %></p>
+                  <p class="lead">
+                    <span>
+                      <%= link_to "Read more", post, class: "btn btn-default" %>
+                    </span>
+                    <span>
+                      <%= link_to "Edit", edit_post_path(post), class: "btn btn-default" %>
+                    </span>
+                    <span>
+                      <%= link_to "Delete", post, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </span>
+                  </p>
+                  <p class="pull-right">
+                    <span class="label label-default">
+                      keyword
+                    </span>
+                    <span class="label label-default">
+                      tag
+                    </span>
+                    <span class="label label-default">
+                      post
+                    </span>
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <a href="#">3 Days Ago</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="glyphicon glyphicon-comment"></i> 1 Comments</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-3"></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <%= link_to 'New Post', new_post_path %>
+</div> <!-- CONTAINER -->
