@@ -1,6 +1,15 @@
-<%= form_for [@post, @comment] do |f| %>
-	<%= f.label :content %>
-	<%= f.text_area :content %>
+<br>
+<br>
+<div class="form">
+	<%= form_for [@post, @comment] do |f| %>
+		<div class="form-group">
+			<%= f.label "Leave a comment" %>
+			<%= f.text_area :content, placeholder: "Your message", class: "form-control" %>
+		</div>
 
-	<%= f.submit "Publish comment" %>
-<% end %>
+		<div class="form-group">
+			<%= f.submit "Publish comment", class: "btn btn-danger lato" %>
+		</div>
+
+	<% end %>
+</div>
