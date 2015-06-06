@@ -1,8 +1,5 @@
 <%= render 'layouts/jumbotron' %>
 
-
-
-
   <p id="notice"><%= notice %></p>
 
   <div id="masthead">
@@ -40,15 +37,11 @@
               <div class="row">
                 <div class="col-xs-9">
                   <p><%= post.content %></p>
-                  <p class="lead">
+                  <p>
                     <span>
-                      <%= link_to "Read more", post, class: "btn btn-default" %>
-                    </span>
-                    <span>
-                      <%= link_to "Edit", edit_post_path(post), class: "btn btn-default" %>
-                    </span>
-                    <span>
-                      <%= link_to "Delete", post, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <%= link_to "Read more", post, style: "color: #F44D3C;" %> |
+                      <%= link_to "Edit", edit_post_path(post), style: "color: #F44D3C;" %> |
+                      <%= link_to "Delete", post, style: "color: #F44D3C;" , method: :delete, data: { confirm: 'Are you sure?' } %>
                     </span>
                   </p>
                   <p class="pull-right">

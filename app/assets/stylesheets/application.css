@@ -16,15 +16,12 @@
 
 .jumbotron {
 	background: url('dark-blur.jpg') no-repeat center center fixed;
-	/*background-attachment: fixed;*/
 	color: white;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 	min-height: 450px;
-	/*margin-top: 0px;
-	margin-bottom: 8px;*/
 }
 
 .auto-pad {
@@ -192,8 +189,8 @@ a,a:hover {
 }
 
 .navbar-trans a{
-    color:#cdcdcd;
-    letter-spacing:1px;
+  color:#cdcdcd;
+  letter-spacing:1px;
 }
 
 .navbar-trans .form-control:focus {
@@ -208,18 +205,26 @@ a,a:hover {
 }
 
 .btn-danger {
-    background-color:#f44d3c;
+  background-color:#F44D3C;
 }
 
 .text-danger, a.text-danger {
-    color:#f44d3c;
+  color:#F44D3C;
 }
 
 .btn-huge {
-    padding:17px 22px;
-    font-size:22px;
+  padding:17px 22px;
+  font-size:22px;
 }
 
 .lato {
-    font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+.edit {
+  color: #00FF00;
+}
+
+.read-more {
+  color: #F44D3C;
 }
