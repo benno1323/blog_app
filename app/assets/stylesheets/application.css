@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  background-color: #D2D7D3;
+}
+
 .jumbotron {
 	background: url('dark-blur.jpg') no-repeat center center fixed;
 	color: white;
@@ -96,9 +100,15 @@ footer {
   display:block;
 }
 
-a,a:hover {
-  color:#223344;
-  text-decoration:none;
+/*LINK STYLE*/
+
+a:hover {
+  color: white;
+  background-color: #CF000F;
+}
+
+a:visited {
+  color: #551A8B;
 }
 
 .icon-bar {
@@ -141,12 +151,12 @@ a,a:hover {
   height:100px;
 }
 
-.panel .lead {
+/*.panel .lead {
   overflow:hidden;
   height:90px;
-}
+}*/
 
-.label-float{
+/*.label-float{
   margin:0 auto;
   position: absolute;
   top: 0;
@@ -155,7 +165,7 @@ a,a:hover {
   opacity:.9;
   padding:6px;
   color:#fff;
-}
+}*/
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
@@ -222,7 +232,7 @@ a,a:hover {
 }
 
 .edit {
-  color: #00FF00;
+  color: #2A5DB0;
 }
 
 .read-more {

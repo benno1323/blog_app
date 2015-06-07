@@ -39,40 +39,36 @@
                   <p><%= post.content %></p>
                   <p>
                     <span>
-                      <%= link_to "Read more", post, style: "color: #F44D3C;" %> |
-                      <%= link_to "Edit", edit_post_path(post), style: "color: #F44D3C;" %> |
-                      <%= link_to "Delete", post, style: "color: #F44D3C;" , method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <%= link_to "Read more", post, class: "read-more medium" %> |
+                      <%= link_to "Edit", edit_post_path(post), class: "edit medium" %> |
+                      <%= link_to "Delete", post, class: "edit medium" , method: :delete, data: { confirm: 'Are you sure?' } %>
                     </span>
                   </p>
-                  <p class="pull-right">
-                    <span class="label label-default">
-                      keyword
-                    </span>
-                    <span class="label label-default">
-                      tag
-                    </span>
-                    <span class="label label-default">
-                      post
-                    </span>
-                  </p>
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">3 Days Ago</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="glyphicon glyphicon-comment"></i> 1 Comments</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a>
-                    </li>
-                  </ul>
+                  <div class="row col-md-4">
+                    <p>
+                      <span class="label label-danger">
+                        keyword
+                      </span>
+                      <span class="label label-danger">
+                        tag
+                      </span>
+                      <span class="label label-danger">
+                        post
+                      </span>
+                    </p>
+                  </div>
+                  <div class="row col-md-8">
+                    3 Days Ago
+                    <i class="glyphicon glyphicon-comment"></i><%= post.comments.count %> comments
+                    <i class="glyphicon glyphicon-share"></i> 34 Shares
+                  </div>
                 </div>
                 <div class="col-xs-3"></div>
               </div>
             </div>
           </div>
           <% end %>
-        </div>
+        </div> <!-- PANEL BODY -->
       </div>
     </div>
   </div>
