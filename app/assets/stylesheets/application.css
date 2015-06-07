@@ -14,11 +14,29 @@
  *= require_self
  */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #2B2B2B;
+  color: whitesmoke;
+}
+
+/*.footer {
   height: 5em;
   background-color: #2b2b2b;
   color: white;
-}
+}*/
 
 body {
   background-color: #D2D7D3;
