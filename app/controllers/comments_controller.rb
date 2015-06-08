@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def create
+    byebug
   	load_post
   	build_comment
 
@@ -18,6 +19,7 @@ class CommentsController < ApplicationController
 
   def build_comment
   	@comment = @post.comments.build(comment_params)
+    @comment.user = current_user
   end
 
   def comment_params
