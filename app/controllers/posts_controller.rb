@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    byebug
+
     # @post = Post.new(post_params)
     # @post.user = current_user
     @post = current_user.posts.build(post_params)
