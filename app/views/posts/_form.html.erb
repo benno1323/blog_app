@@ -1,5 +1,5 @@
 <div class="form">
-  <%= form_for(@post) do |f| %>
+  <%= form_for @post, html: { multipart: true } do |f| %>
     <% if @post.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -19,6 +19,12 @@
     <div class="form-group">
       <%= f.label :content %><br>
       <%= f.text_area :content, class: "form-control", rows: "15" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :photo %><br>
+      <%= f.file_field :photo, class: "form-control" %>
+      <%= f.hidden_field :photo_cache %> <!-- no se muestra pero igual se imprime -->
+      <%= image_tag(@post.photo, class: "img-responsive") if @post.photo? %>
     </div>
     <div class="form-group">
       <%= f.submit class: "btn btn-danger lato" %>

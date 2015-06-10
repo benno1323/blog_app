@@ -2,14 +2,13 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def create
-    byebug
   	load_post
   	build_comment
 
   	if @comment.save
   		redirect_to @post, notice: "El comentario fue creado con exito!"
   	else
-  		redirect_to @post, notice: "No se pudo crear el comentario!"
+  		render 'posts/show', notice: "No se pudo crear el comentario!"
   	end
   end
 
@@ -17,6 +16,7 @@ class CommentsController < ApplicationController
 
   def load_post
   	@post = Post.find(params[:post_id])
+    @last_comments = @post.comments.last(5)
   end
 
   def build_comment
@@ -25,6 +25,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-  	params.require(:comment).permit(:content)
+  	params.require(:comment).permit(:content, :photo, :photo_cache)
   end
 end
