@@ -40,7 +40,9 @@
                   <p>
                     <span>
                       <%= link_to "Read more", post, class: "read-more medium" %> |
+                      <% if can? :edit, post %>
                       <%= link_to "Edit", edit_post_path(post), class: "edit medium" %> |
+                      <% end %>
                       <%= link_to "Delete", post, class: "edit medium" , method: :delete, data: { confirm: 'Are you sure?' } %>
                     </span>
                   </p>

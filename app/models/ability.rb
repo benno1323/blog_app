@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new
     if user.moderator?
-      can :manage, :all?
+      can :manage, :all
     elsif user.guest?
       can :read, :all
       can :create, Post
