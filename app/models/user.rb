@@ -8,5 +8,11 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  # antes de guardar el usuario, llamar al método default_role
   enum role: [:moderator, :guest]
+
+  before_save :default_role
+  def default_role
+  	self.role ||= :guest
+  end
 end
