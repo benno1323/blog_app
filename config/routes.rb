@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks"}
+  resources :finish_signup, only: [:edit, :update]
+
   get 'comments/create'
 
   resources :posts do
