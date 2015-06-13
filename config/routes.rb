@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'comments/create'
 
   resources :posts do
+    member do
+      get :upvote
+    end
+
     resources :comments
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,6 +10,7 @@ class Ability
     elsif user.guest?
       can :read, :all
       can :create, Post
+      can :upvote, Post
       can [:edit, :destroy], [Post, Comment], user_id: user.id
     else
       can :read, :all

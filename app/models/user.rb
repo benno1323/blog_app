@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   # validates :name, presence: true
   has_many :posts, dependent: :destroy
+  has_many :votes
+  has_many :voted_posts, through: :votes, source: :post
+
   has_many :comments, dependent: :destroy
   has_many :identities
 

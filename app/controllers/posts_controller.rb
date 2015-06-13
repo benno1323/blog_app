@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   # before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # load_and_authorize_resource except: :upvote
   load_and_authorize_resource
 
   # GET /posts
@@ -68,7 +69,27 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @vote = Vote.find_or_initialize_by user: current_user, post: @post
+
+    return destroy_and_redirect if @vote.persisted?
+    save_and_redirect
+  end
+
   private
+
+    def destroy_and_redirect
+      @vote.destroy
+      redirect_to @post, notice: "Tu voto ha sido anulado!"
+    end
+
+    def save_and_redirect
+      if @vote.save
+        redirect_to @post, notice: "Tu voto se creo con éxito!"
+      else
+        redirect_to @post, notice: @vote.errors.full_messages.join(", ")
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     # def set_post
     #   @post = Post.find(params[:id])
