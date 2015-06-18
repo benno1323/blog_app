@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     # @posts = Post.all No son necesarios debido al load_and_authorize_resources
     @q = params[:q]
     if params[:q]
-      @posts = Post.where(title:@q) # Busqueda con título exacto
+      @posts = Post.where("content ilike ?","%#{@q}%") # Busqueda con título exacto
     else
       @posts = Post.all
     end
