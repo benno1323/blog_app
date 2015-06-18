@@ -8,6 +8,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.all No son necesarios debido al load_and_authorize_resources
+    @q = params[:q]
+    if params[:q]
+      @posts = Post.where(title:@q) # Busqueda con título exacto
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1
