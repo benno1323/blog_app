@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+    @posts = @posts.page params[:page]
   end
 
   # GET /posts/1

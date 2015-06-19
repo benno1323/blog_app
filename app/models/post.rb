@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
 
 	validates :title, presence: true
 
+	paginates_per 25
+
 	#se define en el modelo al cual se agrego la columna photo
 	mount_uploader :photo, PictureUploader
 end
