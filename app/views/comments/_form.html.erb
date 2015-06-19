@@ -2,7 +2,7 @@
 <br>
 <br>
 <div class="form">
-	<%= form_for [@post, @comment], html: { multipart: true } do |f| %>
+	<%= form_for [@post, @comment], remote: true, html: { multipart: true } do |f| %>
 	<% if @comment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>

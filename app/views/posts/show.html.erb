@@ -29,6 +29,12 @@
 		<%= render 'comments/form' %>
 		<br>
 		<h5>Comments:</h5>
-		<%= render partial: 'comments/comment', collection: @last_comments %>
+		<div id="comments_count">
+			<%= @post.comments.count %> comentarios
+		</div>
+
+		<div id="comments" class="well">
+			<%= render partial: 'comments/comment', collection: @last_comments %>
+		</div>
 	</div>
 </div>

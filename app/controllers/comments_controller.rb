@@ -5,11 +5,15 @@ class CommentsController < ApplicationController
   	load_post
   	build_comment
 
-  	if @comment.save
-  		redirect_to @post, notice: "El comentario fue creado con exito!"
-  	else
-  		render 'posts/show', notice: "No se pudo crear el comentario!"
-  	end
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @post, notice: "El comentario fue creado con exito!" }
+        format.js
+      else
+        format.html { render 'posts/show', notice: "No se pudo crear el comentario!" }
+        format.js
+      end
+    end
   end
 
   private
