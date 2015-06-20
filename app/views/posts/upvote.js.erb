@@ -1,0 +1,5 @@
+<% if flash[:success].present? %>
+	$("#voting").html("<%= j flash[:success] %>").addClass("alert alert-success fade in").fadeOut(3000);
+<% elsif flash[:alert].present? %>
+	$("#voting").html("<%= j flash[:success] %>").addClass("alert alert-alert fade in").fadeOut(3000);
+<% end %>
