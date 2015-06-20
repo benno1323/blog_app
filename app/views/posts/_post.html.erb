@@ -1,0 +1,39 @@
+<div class="row">
+<%= image_tag(post.photo.thumb, class: "img-responsive") %>
+<div class="col-md-10 col-sm-9">
+  <h3><%= post.title %></h3>
+  <div class="row">
+    <div class="col-xs-9">
+      <p><%= post.content %></p>
+      <p>
+        <span>
+          <%= link_to "Read more", post, class: "read-more medium" %> |
+          <% if can? :edit, post %>
+          <%= link_to "Edit", edit_post_path(post), class: "edit medium" %> |
+          <% end %>
+          <%= link_to "Delete", post, class: "edit medium" , method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+      </p>
+      <div class="row col-md-4">
+        <p>
+          <span class="label label-danger">
+            keyword
+          </span>
+          <span class="label label-danger">
+            tag
+          </span>
+          <span class="label label-danger">
+            post
+          </span>
+        </p>
+      </div>
+      <div class="row col-md-8">
+        3 Days Ago
+        <i class="glyphicon glyphicon-comment"></i><%= post.comments.count %> comments
+        <i class="glyphicon glyphicon-share"></i> 34 Shares
+      </div>
+    </div>
+    <div class="col-xs-3"></div>
+  </div>
+</div>
+</div>

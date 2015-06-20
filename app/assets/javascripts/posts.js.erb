@@ -1,0 +1,19 @@
+$(function(){
+	$("#search_field").on("keyup", function(event){
+		$.ajax({
+			url: "/posts",
+			type: "GET",
+			dataType: "script",
+			data: { q: $(this).val() },
+		})
+		.done(function(){
+			console.log("success");
+		})
+		.fail(function(){
+			console.log("error");
+		})
+		.always(function(){
+			console.log("complete");
+		});
+	});
+});
