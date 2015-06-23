@@ -31,7 +31,7 @@
       <div class="panel">
         <div class="panel-body">
           <div id="posts_list">
-            <%= render @posts %>
+            <%= render partial: 'post', collection: @posts %>
           </div>
         </div> <!-- PANEL BODY -->
       </div>
@@ -43,4 +43,32 @@
   <div id="pagination">
     <%= paginate @posts %>
   </div>
+
+  <script>
+  $(window).scroll(function(){
+    paginacion();
+  });
+
+  var paginacion = _.debounce(function(){
+    var next = $(".next").children("a").last().attr("href");
+    var pos = $(document).scrollTop();
+    if (next && pos > $(document).height() - $(window).height() - 50) {
+      $.ajax({
+        url: next,
+        type: "GET",
+        dataType: "script",
+        data: {},
+      })
+      .done(function(){
+        console.log("success");
+      })
+      .fail(function(){
+        console.log("error");
+      })
+      .always(function(){
+        console.log("complete");
+      })
+    }
+  }, 200);
+  </script>
 </div> <!-- CONTAINER -->
