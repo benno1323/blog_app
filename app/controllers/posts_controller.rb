@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    @posts = @posts.page params[:page]
+    @posts = @posts.order(:created_at).page params[:page]
 
     respond_to do |format|
       format.html
@@ -96,7 +96,7 @@ class PostsController < ApplicationController
       respond_to do |format|
         @vote.destroy
         format.html {redirect_to @post, notice: "Tu voto ha sido anulado!"}
-        format.js { flash[:alert] = "Tu voto ha sido anulado!"}
+        #format.js { flash[:alert] = "Tu voto ha sido anulado!"}
       end
     end
 
@@ -104,10 +104,10 @@ class PostsController < ApplicationController
       respond_to do |format|
         if @vote.save
           format.html {redirect_to @post, notice: "Tu voto se creo con éxito!"}
-          format.js { flash[:success] = "Tu voto se creo con éxito!"}
+          #format.js { flash[:success] = "Tu voto se creo con éxito!"}
         else
           format.html {redirect_to @post, notice: @vote.errors.full_messages.join(", ")}
-          format.js { flash[:error] = @vote.errors.full_messages.join(", ") }
+          #format.js { flash[:error] = @vote.errors.full_messages.join(", ") }
         end
       end
     end
