@@ -52,5 +52,11 @@ group :development, :test do
   gem 'spring'
 
   gem "bullet"
-end
 
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm', github: 'capistrano/rvm'
+  gem 'capistrano-ssh-doctor'
+  gem 'capistrano-passenger'
+end
