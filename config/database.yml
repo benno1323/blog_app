@@ -29,5 +29,9 @@ test:
   password: supermiranda
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: app_prueba_production
+  pool: 5
+  username: user_prueba
+  password: '12345678'
